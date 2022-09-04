@@ -75,7 +75,7 @@ def decimal_hex(decimal):
 #crear función nrz-i
 def nrz_I(data):
     data_nrz_i = []
-    estado = True
+    estado = False
     for i in range(len(data)):
         x = None
         if data[i] == 1 and estado == False:
