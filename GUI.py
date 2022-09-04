@@ -27,8 +27,9 @@ class hammingTables:
                                                    "col8", "col9", "col10", "col11", "col12", "col13", "col14", "col15", "col16", "col17", "col18", "col19", "col20"))
 
         self.s = ttk.Style(self.gui)
-        self.s.theme_use("clam")
-        self.s.configure('Treeview', background="silver",
+        self.s.theme_use("default")
+        self.s.configure('Treeview',
+                         background="silver",
                          foreground="black",
                          rowheight=40,
                          fieldbackground="silver",
