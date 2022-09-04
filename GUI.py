@@ -162,11 +162,11 @@ class hammingTables:
         self.tv.insert("", END, text="Palabra con paridad",
                        values=(hamming[0], hamming[1], hamming[2], hamming[3], hamming[4], hamming[5], hamming[6], hamming[7], hamming[8], hamming[9], hamming[10], hamming[11], hamming[12], hamming[13], hamming[14], hamming[15], hamming[16]))
 
-        self.paridades1.append(hamming[0])
-        self.paridades1.append(hamming[1])
-        self.paridades1.append(hamming[3])
-        self.paridades1.append(hamming[7])
         self.paridades1.append(hamming[15])
+        self.paridades1.append(hamming[7])
+        self.paridades1.append(hamming[3])
+        self.paridades1.append(hamming[1])
+        self.paridades1.append(hamming[0])
 
         return hamming
 
@@ -175,11 +175,11 @@ class hammingTables:
         print(len(modifydata))
         newHamming = emitterConverter(self.sizePar, modifydata, self.paridad)
 
-        self.paridades2.append(newHamming[0])
-        self.paridades2.append(newHamming[1])
-        self.paridades2.append(newHamming[3])
-        self.paridades2.append(newHamming[7])
         self.paridades2.append(newHamming[15])
+        self.paridades2.append(newHamming[7])
+        self.paridades2.append(newHamming[3])
+        self.paridades2.append(newHamming[1])
+        self.paridades2.append(newHamming[0])
 
         comparation = self.verifyData()
 
