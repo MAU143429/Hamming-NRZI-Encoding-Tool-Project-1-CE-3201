@@ -3,7 +3,7 @@ import numpy as np
 
 
 # Functions of hamming code-------------------------------------------
-def emitterConverter(sizePar, data,paridad):
+def emitterConverter(sizePar, data, paridad):
     """
     :param sizePar: how many parity bits the message must have
     :param data:  information bits
@@ -49,7 +49,7 @@ def emitterConverter(sizePar, data,paridad):
         else:
             dataOrd.append(None)
 
-    #print(dataOutGab)
+    # print(dataOutGab)
     # Calculates parity
     qtdBP = 0  # parity bit counter
     for bp in range(1, sizePar + 1):
@@ -61,7 +61,7 @@ def emitterConverter(sizePar, data,paridad):
             if x is not None:
                 try:
                     aux = (binPos[contLoop])[-1 * (bp)]
-                    
+
                 except IndexError:
                     aux = "0"
                 if aux == "1":
@@ -71,7 +71,7 @@ def emitterConverter(sizePar, data,paridad):
         parity.append(contBO % 2)
 
         qtdBP += 1
-    
+
     if paridad == "impar":
         nuevaparidad = []
         for bit in parity:
@@ -79,8 +79,7 @@ def emitterConverter(sizePar, data,paridad):
                 nuevaparidad.append(0)
             else:
                 nuevaparidad.append(1)
-        parity = nuevaparidad 
-
+        parity = nuevaparidad
 
     print(parity)
     # Mount the message
@@ -95,8 +94,11 @@ def emitterConverter(sizePar, data,paridad):
     return dataOut
 
 
+'''
 binaryText = '101010101010'
 print("\n --Message exchange--")
 print("Data to send ------------> " + binaryText)
 dataOut = emitterConverter(5, binaryText, "par")
 print("Data converted ----------> " + "".join(dataOut))
+print(dataOut)
+'''
