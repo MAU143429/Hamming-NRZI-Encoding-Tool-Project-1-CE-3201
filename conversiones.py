@@ -1,24 +1,23 @@
-
 import matplotlib.pyplot as plt
 import numpy as np
 
 #solicitar los datos
 def recibeoctal():
     try:
-        octal = int(input("Ingrese un número octal entre 0000 y 777: "))
+        octal = int(input("Ingrese un número octal entre 0000 y 7777: "))
         #paridad =str(input("Ingrese el tipo de paridad que desea: par o impar. ")).lower()
 
-        if 0 <= octal < 777: 
+        if 0 <= octal < 7778: 
 
             Decimal = octal_decimal(str(octal))
             Binario = decimal_binario(octal_decimal(str(octal)))
             Hexadecimal = decimal_hex(octal_decimal(str(octal)))
 
-            #print(Decimal, Binario, Hexadecimal)
+            print(Decimal, Binario, Hexadecimal)
 
-            data = [0, 0, 0, 0, 0, 0, 0, 0]
+            data = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             for i in range(len(Binario)):
-                data[8 - len(Binario) + i] = int(Binario[i])
+                data[13 - len(Binario) + i] = int(Binario[i])
 
             nrz_I(data)
             
@@ -80,19 +79,19 @@ def nrz_I(data):
     for i in range(len(data)):
         x = None
         if data[i] == 1 and estado == False:
-            x = 0
+            x = -1
             estado = True
         elif data[i] == 1 and estado == True:
             x = 1
             estado = False
         elif data[i] == 0 and estado == True:
-            x = 0
+            x = -1
         elif data[i] == 0 and estado == False:
             x = 1
         data_nrz_i.append(x)
 
     if data_nrz_i[0] == 0:
-        data_nrz_i[0] = 0
+        data_nrz_i[0] = 1
     data_nrz_i.append(1)
     xs = np.repeat(range(len(data_nrz_i)), 2)
     ys = np.repeat(data_nrz_i,2)
@@ -102,8 +101,8 @@ def nrz_I(data):
     plt.title("NRZI")
     plt.xlabel(str(data))
     plt.plot(xs,ys)
-    plt.ylim(-1,2)
-    plt.xlim(0,9)
+    plt.ylim(-1.5,1.5)
+    plt.xlim(0,14)
     plt.show()
 
 
