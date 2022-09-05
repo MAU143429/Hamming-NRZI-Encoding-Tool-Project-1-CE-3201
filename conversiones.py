@@ -60,6 +60,20 @@ def decimal_binario(decimal):
         residuo = int(decimal % 2)
         decimal = int(decimal / 2)
         binario = str(residuo) + binario
+        
+    def decimal_binario(decimal):
+    if decimal <= 0:
+        return "0"
+    binario = ""
+    while int(decimal) > 0:
+        residuo = int(decimal % 2)
+        decimal = int(decimal / 2)
+        binario = str(residuo) + binario
+
+    if len(binario) == 12:
+        binario = binario
+    else: 
+        binario = binario.zfill(12)
     return binario
 
 # Hexadecimal:
